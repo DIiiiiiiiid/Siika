@@ -1,0 +1,12 @@
+{
+  "name": "merge-big-coin",
+  "version": "1.0.0",
+  "description": "合成大硬币游戏",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve -s ."
+  },
+  "dependencies": {
+    "serve": "^14.0.1"
+  }
+}
