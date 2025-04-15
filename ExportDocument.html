@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>硬币合成大师 - 策划文档导出工具</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/docx.js"></script>
+    <style>
+      body {
+        font-family: "Microsoft YaHei", Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 4px;
+        display: block;
+        margin: 30px auto;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .instructions {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      .loading {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+      .spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #09f;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>《硬币合成大师》策划文档导出工具</h1>
+
+      <div class="instructions">
+        <p>这个工具可以帮助您将项目的策划文档导出为Word格式（.docx文件）。</p>
+        <p>
+          点击下方的"导出Word文档"按钮，系统将自动读取<strong>GameDesignDocument.md</strong>文件并转换为Word格式供您下载。
+        </p>
+      </div>
+
+      <button id="exportBtn">导出Word文档</button>
+
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>正在生成文档，请稍候...</p>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#exportBtn").click(function () {
+          $("#loading").show();
+
+          // 读取Markdown文件
+          $.get("GameDesignDocument.md", function (markdownContent) {
+            // 转换Markdown为HTML
+            const converter = new showdown.Converter();
+            const htmlContent = converter.makeHtml(markdownContent);
+
+            // 将HTML转换为Word文档
+            const doc = new docx.Document();
+
+            // 分割HTML成段落
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = htmlContent;
+
+            // 处理标题和段落
+            const children = Array.from(tempDiv.children);
+
+            children.forEach((element) => {
+              if (element.tagName.match(/H[1-6]/)) {
+                // 处理标题
+                const level = parseInt(element.tagName.substring(1));
+                doc.addParagraph(
+                  new docx.Paragraph({
+                    text: element.textContent,
+                    heading: `Heading${level}`,
+                    spacing: { before: 200, after: 100 },
+                  })
+                );
+              } else if (element.tagName === "P") {
+                // 处理段落
+                doc.addParagraph(
+                  new docx.Paragraph({
+                    text: element.textContent,
+                    spacing: { before: 100, after: 100 },
+                  })
+                );
+              } else if (element.tagName === "UL" || element.tagName === "OL") {
+                // 处理列表
+                Array.from(element.querySelectorAll("li")).forEach((li) => {
+                  doc.addParagraph(
+                    new docx.Paragraph({
+                      text: "• " + li.textContent,
+                      indent: { left: 720 },
+                      spacing: { before: 100, after: 100 },
+                    })
+                  );
+                });
+              }
+            });
+
+            // 生成Word文档并下载
+            docx.Packer.toBlob(doc).then((blob) => {
+              saveAs(blob, "硬币合成大师策划文档.docx");
+              $("#loading").hide();
+            });
+          }).fail(function () {
+            alert(
+              "无法读取Markdown文件，请确保GameDesignDocument.md文件存在。"
+            );
+            $("#loading").hide();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

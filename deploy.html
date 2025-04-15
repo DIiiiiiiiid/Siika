@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>硬币合成大师 - GitHub发布指南</title>
+    <style>
+      body {
+        font-family: "Microsoft YaHei", sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+      }
+      h1 {
+        color: #0366d6;
+        border-bottom: 2px solid #eaecef;
+        padding-bottom: 10px;
+      }
+      .step {
+        background-color: #f6f8fa;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+      .step-number {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background-color: #0366d6;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        margin-right: 10px;
+      }
+      .note {
+        background-color: #fff8c5;
+        border-left: 4px solid #f1c40f;
+        padding: 10px;
+        margin: 15px 0;
+      }
+      code {
+        background-color: #eff1f3;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-family: Consolas, monospace;
+      }
+      .button {
+        display: inline-block;
+        background-color: #2ea44f;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+      .button:hover {
+        background-color: #2c974b;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>硬币合成大师 - GitHub Pages发布指南</h1>
+
+    <div class="note">
+      请按照以下步骤将您的游戏发布到GitHub
+      Pages，这样您的朋友就可以通过链接直接访问并玩游戏。
+    </div>
+
+    <div class="step">
+      <span class="step-number">1</span>
+      <strong>创建GitHub账号</strong>
+      <p>
+        如果您还没有GitHub账号，请访问
+        <a href="https://github.com/signup" target="_blank"
+          >https://github.com/signup</a
+        >
+        创建一个账号。
+      </p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">2</span>
+      <strong>创建新仓库</strong>
+      <p>
+        登录后，点击右上角加号，选择"New repository"，或直接访问
+        <a href="https://github.com/new" target="_blank"
+          >https://github.com/new</a
+        >
+      </p>
+      <ul>
+        <li>仓库名称输入: <code>Siika</code></li>
+        <li>选择"Public"公开选项</li>
+        <li>点击"Create repository"按钮</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <span class="step-number">3</span>
+      <strong>上传您的游戏文件</strong>
+      <p>在新建的仓库页面中:</p>
+      <ul>
+        <li>点击"uploading an existing file"链接</li>
+        <li>
+          将您整个项目的所有文件拖拽到上传区域(包括index.html、src文件夹、assets文件夹等)
+        </li>
+        <li>
+          确保至少包含以下文件：
+          <ul>
+            <li><code>index.html</code> (主页面)</li>
+            <li><code>src/game.js</code> (游戏逻辑)</li>
+            <li><code>src/style.css</code> (样式表)</li>
+            <li><code>assets/</code> 文件夹 (所有图像资源)</li>
+          </ul>
+        </li>
+        <li>添加提交信息，例如: "Initial game files upload"</li>
+        <li>点击"Commit changes"按钮</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <span class="step-number">4</span>
+      <strong>启用GitHub Pages</strong>
+      <p>文件上传完成后:</p>
+      <ul>
+        <li>点击仓库顶部的"Settings"选项卡</li>
+        <li>在左侧菜单找到"Pages"选项</li>
+        <li>在"Source"部分，将分支选择为"main"</li>
+        <li>点击"Save"按钮</li>
+        <li>等待几分钟，页面会显示您的网站URL</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <span class="step-number">5</span>
+      <strong>访问和分享您的游戏</strong>
+      <p>部署完成后，您的游戏将会在以下地址可用:</p>
+      <code>https://DIiiiiiiiid.github.io/Siika/</code>
+      <p>您可以将此链接分享给您的朋友，他们点击链接就能直接玩游戏了！</p>
+    </div>
+
+    <div class="note">
+      <strong>注意:</strong> GitHub
+      Pages部署通常需要几分钟时间。如果您访问链接后看到404错误，请稍等片刻再试。
+    </div>
+
+    <a href="https://github.com/new" target="_blank" class="button"
+      >开始创建GitHub仓库</a
+    >
+  </body>
+</html>

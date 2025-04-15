@@ -1,0 +1,132 @@
+{
+  "collections": [
+    {
+      "id": 1,
+      "name": "世界核平币",
+      "quality": 1,
+      "image": "assets/bestcoin/1.png",
+      "description": "8",
+      "unlocked": true
+    },
+    {
+      "id": 2,
+      "name": "诺贝尔环保币",
+      "quality": 1,
+      "image": "assets/bestcoin/2.png",
+      "description": "9",
+      "unlocked": false
+    },
+    {
+      "id": 3,
+      "name": "松鼠复活币",
+      "quality": 1,
+      "image": "assets/bestcoin/3.png",
+      "description": "10",
+      "unlocked": false
+    },
+    {
+      "id": 4,
+      "name": "星际遨行币",
+      "quality": 1,
+      "image": "assets/bestcoin/4.png",
+      "description": "11",
+      "unlocked": false
+    },
+    {
+      "id": 5,
+      "name": "灭霸响指币",
+      "quality": 2,
+      "image": "assets/bestcoin/5.png",
+      "description": "12",
+      "unlocked": false
+    },
+    {
+      "id": 6,
+      "name": "扎克斯堡伯格币",
+      "quality": 2,
+      "image": "assets/bestcoin/6.png",
+      "description": "13",
+      "unlocked": false
+    },
+    {
+      "id": 7,
+      "name": "青菜灭绝币",
+      "quality": 2,
+      "image": "assets/bestcoin/7.png",
+      "description": "14",
+      "unlocked": false
+    },
+    {
+      "id": 8,
+      "name": "AI失业救济币",
+      "quality": 2,
+      "image": "assets/bestcoin/8.png",
+      "description": "15",
+      "unlocked": false
+    },
+    {
+      "id": 9,
+      "name": "川普登月纪念币",
+      "quality": 3,
+      "image": "assets/bestcoin/9.png",
+      "description": "16",
+      "unlocked": false
+    },
+    {
+      "id": 10,
+      "name": "反重力掘鞋币",
+      "quality": 3,
+      "image": "assets/bestcoin/10.png",
+      "description": "17",
+      "unlocked": false
+    },
+    {
+      "id": 11,
+      "name": "彩虹独角兽币",
+      "quality": 3,
+      "image": "assets/bestcoin/11.png",
+      "description": "18",
+      "unlocked": false
+    },
+    {
+      "id": 12,
+      "name": "梵高助听器众筹币",
+      "quality": 3,
+      "image": "assets/bestcoin/12.png",
+      "description": "19",
+      "unlocked": false
+    },
+    {
+      "id": 13,
+      "name": "硅谷裁员功德币",
+      "quality": 4,
+      "image": "assets/bestcoin/13.png",
+      "description": "20",
+      "unlocked": false
+    },
+    {
+      "id": 14,
+      "name": "火星韭菜币",
+      "quality": 4,
+      "image": "assets/bestcoin/14.png",
+      "description": "21",
+      "unlocked": false
+    },
+    {
+      "id": 15,
+      "name": "霍格沃兹学费币",
+      "quality": 4,
+      "image": "assets/bestcoin/15.png",
+      "description": "22",
+      "unlocked": false
+    },
+    {
+      "id": 16,
+      "name": "登月摄影棚参观币",
+      "quality": 4,
+      "image": "assets/bestcoin/16.png",
+      "description": "23",
+      "unlocked": false
+    }
+  ]
+}
